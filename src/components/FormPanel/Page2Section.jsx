@@ -1,4 +1,5 @@
 import React from 'react';
+import AutoTextarea from '../ui/AutoTextarea';
 
 export default function Page2Section({ enabled, page2Data, onToggle, onChange }) {
   const handleFieldChange = (field, value) => {
@@ -43,11 +44,12 @@ export default function Page2Section({ enabled, page2Data, onToggle, onChange })
               <label className="block text-dim text-[11px] mb-1 uppercase tracking-wider">
                 {f.label} <span className="text-border-strong font-normal normal-case">({f.sub})</span>
               </label>
-              <textarea
-                rows={f.rows}
-                value={page2Data[f.key]}
+              <AutoTextarea
+                minRows={Math.max(f.rows, 3)}
+                maxLength={3000}
+                value={page2Data[f.key] || ''}
                 onChange={(e) => handleFieldChange(f.key, e.target.value)}
-                className="w-full bg-wash border border-border rounded-md p-2.5 text-ink placeholder-dim focus:outline-none focus:ring-2 focus:ring-[var(--focus)] focus:border-accent transition text-[11px] leading-relaxed resize-y"
+                placeholder={`Tuliskan ${f.label.toLowerCase()} secara jelas...`}
               />
             </div>
           ))}

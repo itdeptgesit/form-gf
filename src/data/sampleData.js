@@ -23,13 +23,13 @@ Perpanjangan bantuan direkomendasikan agar dukungan pendidikan yang telah diberi
     enabled: true,
     name: 'Angelica Thania',
     signatureImg: null,
-    defaultSignature: true
+    defaultSignature: false
   },
   reviewedBy: {
     enabled: true,
     role: 'Pengurus',
     signatureImg: null,
-    defaultSignature: true
+    defaultSignature: false
   },
   approval: {
     enabled: true,

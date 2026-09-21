@@ -1,5 +1,6 @@
 import React from 'react';
 import { Upload } from 'lucide-react';
+import AutoTextarea from '../ui/AutoTextarea';
 
 export default function ApplicantSection({ data, onChange }) {
   const handleLogoUpload = (e) => {
@@ -86,14 +87,13 @@ export default function ApplicantSection({ data, onChange }) {
         <label className="block text-dim text-[11px] mb-1.5 uppercase tracking-wider">
           Alasan Permohonan
         </label>
-        <textarea
-          rows={5}
+        <AutoTextarea
+          minRows={6}
+          maxLength={5000}
           value={data.reasons}
           onChange={(e) => onChange('reasons', e.target.value)}
-          placeholder="Latar belakang dan alasan permohonan..."
-          className="w-full bg-wash border border-border rounded-md p-2.5 text-ink placeholder-dim focus:outline-none focus:ring-2 focus:ring-[var(--focus)] focus:border-accent transition leading-relaxed resize-y text-[11px]"
+          placeholder="Tuliskan latar belakang, kondisi penerima, urgensi bantuan, dan rekomendasi. Gunakan Enter ganda untuk paragraf baru."
         />
-        <p className="text-[10px] text-dim mt-1">Enter ganda = paragraf baru</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-3">

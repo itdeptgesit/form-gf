@@ -184,16 +184,6 @@ export default function Page1({ data }) {
                       alt="Signature"
                       className="max-h-12 max-w-full object-contain"
                     />
-                  ) : data.requestedBy?.defaultSignature ? (
-                    <svg viewBox="0 0 100 40" className="h-10 w-auto opacity-70">
-                      <path
-                        d="M10 30 Q 30 5, 45 25 T 75 10 T 90 35"
-                        fill="none"
-                        stroke="#1e293b"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                      />
-                    </svg>
                   ) : (
                     <div className="h-10" />
                   )}
@@ -218,16 +208,6 @@ export default function Page1({ data }) {
                       alt="Signature"
                       className="max-h-12 max-w-full object-contain"
                     />
-                  ) : data.reviewedBy?.defaultSignature ? (
-                    <svg viewBox="0 0 100 40" className="h-10 w-auto opacity-70">
-                      <path
-                        d="M15 35 C 10 10, 40 5, 35 30 C 30 38, 55 10, 80 20"
-                        fill="none"
-                        stroke="#1e293b"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                      />
-                    </svg>
                   ) : (
                     <div className="h-10" />
                   )}

@@ -10,8 +10,7 @@ function SignatureBox({ field, label, data, onChange }) {
     reader.onload = (e) => {
       onChange(field, {
         ...data,
-        signatureImg: e.target?.result,
-        defaultSignature: false
+        signatureImg: e.target?.result
       });
     };
     reader.readAsDataURL(file);
@@ -21,8 +20,7 @@ function SignatureBox({ field, label, data, onChange }) {
     if (!sigUrl.trim()) return;
     onChange(field, {
       ...data,
-      signatureImg: sigUrl.trim(),
-      defaultSignature: false
+      signatureImg: sigUrl.trim()
     });
     setSigUrl('');
   };
@@ -30,16 +28,7 @@ function SignatureBox({ field, label, data, onChange }) {
   const handleClearSignature = () => {
     onChange(field, {
       ...data,
-      signatureImg: null,
-      defaultSignature: false
-    });
-  };
-
-  const handleUseDefault = () => {
-    onChange(field, {
-      ...data,
-      signatureImg: null,
-      defaultSignature: true
+      signatureImg: null
     });
   };
 
@@ -101,18 +90,7 @@ function SignatureBox({ field, label, data, onChange }) {
                   className="hidden"
                 />
               </label>
-              <button
-                type="button"
-                onClick={handleUseDefault}
-                className={`px-2 py-1 border rounded transition text-[10px] ${
-                  data.defaultSignature
-                    ? 'border-border-strong text-ink bg-wash'
-                    : 'border-border text-dim hover:text-ink bg-surface'
-                }`}
-              >
-                Default
-              </button>
-              {(data.signatureImg || data.defaultSignature) && (
+              {data.signatureImg && (
                 <button
                   type="button"
                   onClick={handleClearSignature}
@@ -148,26 +126,13 @@ function SignatureBox({ field, label, data, onChange }) {
             </div>
           </div>
 
-          {(data.signatureImg || data.defaultSignature) && (
+          {data.signatureImg && (
             <div className="p-2 bg-surface border border-border rounded flex items-center justify-center min-h-[48px]">
-              {data.signatureImg ? (
-                <img
-                  src={data.signatureImg}
-                  alt="Signature preview"
-                  className="max-h-10 max-w-full object-contain"
-                />
-              ) : (
-                <svg viewBox="0 0 100 40" className="h-8 w-auto opacity-40">
-                  <path
-                    d="M10 30 Q 30 5, 45 25 T 75 10 T 90 35"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    className="text-dim"
-                  />
-                </svg>
-              )}
+              <img
+                src={data.signatureImg}
+                alt="Signature preview"
+                className="max-h-10 max-w-full object-contain"
+              />
             </div>
           )}
         </>
