@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/gesit-logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Permohonan & Beasiswa - Yayasan Gesit Peduli Bangsa</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- html2pdf.js loaded via npm -->
+    <script>
+      (function(){
+        var t=localStorage.getItem('theme-preference');
+        if(t==='dark'){document.documentElement.classList.add('dark')}
+        else if(t==='light'){document.documentElement.classList.add('light')}
+        else if(window.matchMedia('(prefers-color-scheme:dark)').matches){document.documentElement.classList.add('dark')}
+      })();
+    </script>
+  </head>
+  <body class="bg-slate-950 text-slate-100 min-h-screen antialiased">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
